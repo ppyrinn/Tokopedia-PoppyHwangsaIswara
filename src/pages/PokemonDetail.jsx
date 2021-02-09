@@ -1,6 +1,5 @@
-import React, { useState, useContext, useEffect } from 'react';
-import { Link } from 'react-router-dom';
-import { css, cx } from '@emotion/css';
+import React, { useState, useEffect } from 'react';
+import { css } from '@emotion/css';
 import { useQuery } from '@apollo/react-hooks';
 import { GET_POKEMON_DETAIL } from '../graphql/api';
 import { savePokemon } from '../database/db';
@@ -121,7 +120,7 @@ export function PokemonDetail() {
 				setPokemonData(data.pokemon);
 			}
 		},
-		[ loading, data ]
+		[ loading, data, error ]
 	);
 
 	const handleCatch = () => {

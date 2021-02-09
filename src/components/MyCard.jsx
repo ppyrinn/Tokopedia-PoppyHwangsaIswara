@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from 'react';
-import { Link, useHistory } from 'react-router-dom';
+import React from 'react';
+import { Link } from 'react-router-dom';
 import { css } from '@emotion/css';
 import { deletePokemon } from '../database/db';
 
@@ -103,9 +103,7 @@ const styles = {
 		font-weight: bolder;
 		color: ${color.w};
 	`,
-	releaseButtonText: css`
-		
-	`
+	releaseButtonText: css``
 };
 
 export function MyCard({ pokemon, getData }) {
@@ -115,7 +113,7 @@ export function MyCard({ pokemon, getData }) {
 	const handleRelease = async () => {
 		try {
 			await deletePokemon(key);
-      await getData(true)
+			await getData(true);
 			console.log('You just released a pokemon.');
 		} catch (error) {
 			console.log(error);

@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
 import { css } from '@emotion/css';
 import { getAllPokemon } from '../database/db';
 

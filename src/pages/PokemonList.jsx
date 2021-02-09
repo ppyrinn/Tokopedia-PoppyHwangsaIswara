@@ -1,6 +1,5 @@
-import React, { useState, useContext, useEffect } from 'react';
-import { Link } from 'react-router-dom';
-import { css, cx } from '@emotion/css';
+import React, { useState, useEffect } from 'react';
+import { css } from '@emotion/css';
 import { GET_POKEMON_LIST } from '../graphql/api';
 import { useQuery } from '@apollo/react-hooks';
 import { Card } from '../components';
@@ -28,7 +27,7 @@ const styles = {
 	buttons: css`
 		text-align: center;
 		margin-bottom: 20px;
-    height: 60px;
+		height: 60px;
 	`,
 	button: css`
 		background-color: ${color.y};
@@ -45,7 +44,7 @@ const styles = {
 		@media (min-width: 481px) {
 			&:hover {
 				box-shadow: 0 4px 8px 0 rgba(209, 209, 209, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.05);
-        margin-top: -5px;
+				margin-top: -5px;
 			}
 		}
 	`,
@@ -73,7 +72,7 @@ export function PokemonList() {
 				setPokemons(data.pokemons.results);
 			}
 		},
-		[ loading, data ]
+		[ loading, data, error ]
 	);
 
 	const handleLoadMore = () => {

@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { useEffect } from 'react';
 import { getAllPokemon, getAllPokemonKey } from '../database/db';
 import { MyCard } from '../components';
-import { css, cx } from '@emotion/css';
+import { css } from '@emotion/css';
 
 const styles = {
 	root: css`

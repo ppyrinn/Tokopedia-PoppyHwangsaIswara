@@ -1,6 +1,6 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { css, cx } from '@emotion/css';
+import { css } from '@emotion/css';
 
 const color = {
 	w: '#ffffff',

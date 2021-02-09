@@ -1,6 +1,6 @@
-import React, { useState, useContext, useEffect } from 'react';
-import { Link, useHistory } from 'react-router-dom';
-import { css, cx } from '@emotion/css';
+import React, { useState, useEffect } from 'react';
+import { useHistory } from 'react-router-dom';
+import { css } from '@emotion/css';
 import { getPokemonByKey, deletePokemon, updatePokemon, getAllPokemon } from '../database/db';
 import { ConfirmationModal } from '../components';
 
