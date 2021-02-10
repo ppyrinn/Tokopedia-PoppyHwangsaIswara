@@ -15,22 +15,32 @@ const styles = {
 			width: 150px;
 			height: 300px;
 			margin: 10px;
-			.detail {
+			div {
 				text-align: center;
+			}
+			img {
+				max-width: 100%;
+				height: auto;
+				width: 100px;
 			}
 		}
 		@media (min-width: 481px) {
 			border-radius: 100%;
-			.detail {
+			div {
 				display: none;
+			}
+			img {
+				max-width: 100%;
+				height: auto;
+				width: 100px;
 			}
 			&:hover {
 				background-color: ${color.y};
 			}
-			&:hover .image {
+			&:hover img {
 				display: none;
 			}
-			&:hover .detail {
+			&:hover div {
 				display: flex;
 				flex-direction: column;
 				justify-content: center;
@@ -122,8 +132,8 @@ export function MyCard({ pokemon, getData }) {
 
 	return (
 		<div className={styles.root}>
-			<img src={detail.sprites.front_default} alt={detail.name} class="image" />
-			<div class="detail">
+			<img src={detail.sprites.front_default} alt={detail.name} />
+			<div>
 				<p className={styles.name}>{String(detail.name).toUpperCase()}</p>
 				<Link to={'mylist/detail/' + key}>
 					<button className={styles.button}>

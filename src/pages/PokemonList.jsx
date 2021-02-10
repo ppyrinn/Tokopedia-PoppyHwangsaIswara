@@ -84,7 +84,7 @@ export function PokemonList() {
 			<h1 className={styles.title}>Pokemon List</h1>
 			{pokemons ? (
 				<div>
-					<div className={styles.cards}>{pokemons.map((p) => <Card pokemon={p} />)}</div>
+					<div className={styles.cards}>{pokemons.map((p) => <Card pokemon={p} key={p.id}/>)}</div>
 					<div className={styles.buttons}>
 						<button className={styles.button} onClick={handleLoadMore}>
 							<h5 className={styles.buttonText}>Load more</h5>

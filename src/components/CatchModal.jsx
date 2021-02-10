@@ -148,6 +148,8 @@ export function CatchModal({ success, closeModal, show, saveName }) {
 		if (!nameExist) {
 			await saveName(name);
 			await setName('');
+			await setChecked(false);
+			await setNameExist(false);
 			await closeModal();
 		}
 	};
@@ -185,6 +187,8 @@ export function CatchModal({ success, closeModal, show, saveName }) {
 								<p className={styles.error}>Sorry, that name is already exist.</p>
 							) : nameExist === false && checked === true ? (
 								<p className={styles.success}>You can use this name.</p>
+							) : nameExist === false && checked === false ? (
+								<p className={styles.error} />
 							) : (
 								<p className={styles.error} />
 							)}

@@ -63,7 +63,7 @@ export function MyPokemonList() {
 			<h1 className={styles.title}>My Pokemon List</h1>
 			{pokemonData ? (
 				<div className={styles.cards}>
-					{pokemonData.map((pokemon) => <MyCard pokemon={pokemon} getData={handleGetData} />)}
+					{pokemonData.map((pokemon) => <MyCard pokemon={pokemon} getData={handleGetData} key={pokemon.id}/>)}
 				</div>
 			) : (
 				<div>

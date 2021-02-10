@@ -14,22 +14,32 @@ const styles = {
 			width: 150px;
 			height: 300px;
 			margin: 10px;
-			.detail {
+			div {
 				text-align: center;
+			}
+			img {
+				max-width: 100%;
+				height: auto;
+				width: 100px;
 			}
 		}
 		@media (min-width: 481px) {
 			border-radius: 100%;
-			.detail {
+			div {
 				display: none;
+			}
+			img {
+				max-width: 100%;
+				height: auto;
+				width: 100px;
 			}
 			&:hover {
 				background-color: ${color.y};
 			}
-			&:hover .image {
+			&:hover img {
 				display: none;
 			}
-			&:hover .detail {
+			&:hover div {
 				display: flex;
 				flex-direction: column;
 				justify-content: center;
@@ -99,8 +109,8 @@ export function Card({ pokemon }) {
 
 	return (
 		<div className={styles.root}>
-			<img src={pokemon.image} alt={pokemon.name} class="image" />
-			<div class="detail">
+			<img src={pokemon.image} alt={pokemon.name} />
+			<div>
 				<p className={styles.name}>{String(pokemon.name).toUpperCase()}</p>
 				<p className={styles.owned}>
 					You owned <b>{owned}</b> of them
